@@ -1,0 +1,2 @@
+C:\Users\erent\Documents\MEGA\C++\While Loop\Debug\While Loop.exe.lastcodeanalysissucceeded
+C:\Users\erent\Documents\MEGA\C++\While Loop\While Loop\Debug\NativeCodeAnalysis.read.1.tlog
