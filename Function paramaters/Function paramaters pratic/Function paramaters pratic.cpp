@@ -1,4 +1,4 @@
-// Function paramaters pratic.cpp //
+// Function paramaters practice.cpp //
 
 #include <iostream>
 using namespace std;
