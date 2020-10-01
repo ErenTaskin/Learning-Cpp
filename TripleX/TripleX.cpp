@@ -3,22 +3,28 @@ using namespace std;
 
 int main() 
 { 
+    // Printing story
     cout << "You are a prisoner in the jail.\n";
     cout << "You need escape from here.\n";
-    cout << "But to escape from here you need to enter the right numbers to jail door keypads.\n";
+    cout << "But to escape from here you need to enter the right numCodeBers to jail door keypads.\n";
     cout << "Good luck.\n";
     cout << "*********************************************************************************\n";
 
-    int a = 2;
-    int b = 3;
-    int c = 4;
+    // Declaring variables
+    int CodeA = 2;
+    int CodeB = 3;
+    int CodeC = 4;
 
-    int sum = a + b + c;
-    int multiply = a * b * c;
+    int CodeSum = CodeA + CodeB + CodeC;
+    int CodeProduct = CodeA * CodeB * CodeC;
 
-    cout << sum;
+    // Printing variables
+    cout << "There are 3 numbers of code.\n";
+    cout << "The codes add-up to: " << CodeSum;
     cout << "\n";
-    cout << multiply;
+    cout << "The codes multiply to give: " << CodeProduct;
+
+    int PlayerGuess;
 
     return 0; 
 }
