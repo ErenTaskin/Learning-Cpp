@@ -35,7 +35,7 @@ int main()
 
     if (CodeSum == GuessSum && CodeProduct == GuessProduct)
     {
-        cout << "You escaped.";
+        cout << "You escaped. Well done.";
     }
     else
     {
