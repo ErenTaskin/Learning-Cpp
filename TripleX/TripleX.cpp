@@ -1,25 +1,25 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
-void PrintIntroduction ()
+void PrintIntroduction (int Difficulty)
 {
     // Printing story
-    cout << "\nYou are a prisoner in the jail.\n";
-    cout << "You need escape from here.\n";
-    cout << "But to escape from here you need to enter the right numbers to jail door keypads.\n";
+    cout << "\nYou are a prisoner in the jail. You need escape from here.\n";
+    cout << "But to escape from here you need to enter the right numbers to jail door keypads. This is the " << Difficulty << ". door.\n";
     cout << "Good luck.\n";
-    cout << "*********************************************************************************\n";
+    cout << "*********************************************************************************";
 }
 
-bool PlayGame ()
+bool PlayGame (int Difficulty)
 {
     // Declaring variables
-    int CodeA = 2;
-    int CodeB = 3;
-    int CodeC = 4;
+    const int CodeA = rand() % Difficulty + 1;
+    const int CodeB = rand() % Difficulty + 1;
+    const int CodeC = rand() % Difficulty + 1;
 
-    int CodeSum = CodeA + CodeB + CodeC;
-    int CodeProduct = CodeA * CodeB * CodeC;
+    const int CodeSum = CodeA + CodeB + CodeC;
+    const int CodeProduct = CodeA * CodeB * CodeC;
 
     // Printing variables
     cout << "\nThere are 3 numbers of code.\n";
@@ -38,25 +38,33 @@ bool PlayGame ()
     // Checking is player guess is correct
     if (CodeSum == GuessSum && CodeProduct == GuessProduct)
     {
-        cout << "\nYou escaped. Well done.\n";
+        cout << "\n***You pass this door. Well done.***\n";
         return true;
     }
     else
     {
-        cout << "\nYou couldn't escaped.\n";
+        cout << "\n***You couldn't pass this door.***\n";
         return false;
     }
 }
 
 int main() 
 { 
-    PrintIntroduction();
-    while(true)
+    srand(time(NULL));
+    int LevelDifficulty = 1;
+    const int MaxDifficulty = 5;
+    while (LevelDifficulty <= MaxDifficulty) 
     {
-        bool bLevelComplete = PlayGame();
+        PrintIntroduction(LevelDifficulty);
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         cin.clear(); // Clears any error
         cin.ignore(); // Discards the buffer
-    }
 
+        if (bLevelComplete)
+        {
+            ++LevelDifficulty;
+        }
+    }
+    cout << "***Congratulations, you escaped from prison.***";
     return 0;                                   
 }
